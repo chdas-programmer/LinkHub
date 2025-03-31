@@ -1,0 +1,53 @@
+# Node.js dependencies (Frontend & Backend)
+Frontend/node_modules/
+Backend/node_modules/
+
+# Build files (Frontend & Backend)
+Frontend/dist/
+Backend/dist/
+
+# Vite cache
+Frontend/.vite/
+Frontend/.cache/
+
+# Logs & Debugging
+Frontend/npm-debug.log*
+Backend/npm-debug.log*
+Frontend/yarn-debug.log*
+Backend/yarn-debug.log*
+Frontend/pnpm-debug.log*
+Backend/pnpm-debug.log*
+debug.log
+
+# Environment Variables
+Frontend/.env
+Backend/.env
+Frontend/.env.local
+Backend/.env.local
+Frontend/.env.development
+Backend/.env.development
+Frontend/.env.production
+Backend/.env.production
+Frontend/.env.test
+Backend/.env.test
+
+# Database & Authentication (if applicable)
+Backend/*.sqlite
+Backend/*.db
+Backend/*.db-journal
+Backend/dump.rdb
+Backend/*.pem
+
+# Uploaded files (if applicable)
+Backend/uploads/
+Backend/public/uploads/
+
+# OS-related
+.DS_Store
+Thumbs.db
+
+# Editor-specific
+.vscode/
+.idea/
+*.swp
+*.swo
