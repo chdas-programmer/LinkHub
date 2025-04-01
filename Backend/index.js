@@ -24,7 +24,7 @@ app.use(cookieParser());
 
   app.use(
     cors({
-      origin: "https://link-md9x55w9g-chdas-programmers-projects.vercel.app/", // ✅ Allow frontend URL
+      origin: "https://link-9ofroyooj-chdas-programmers-projects.vercel.app/", // ✅ Allow frontend URL
       credentials: true, // ✅ Allow cookies
     })
   );
