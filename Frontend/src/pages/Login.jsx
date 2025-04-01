@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BaseUrl}/api/user/loginUser`, formData, {
+      const response = await axios.post(`https://linkhub-70dv.onrender.com/api/user/loginUser`, formData, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true, // If using cookies for authentication
       });
