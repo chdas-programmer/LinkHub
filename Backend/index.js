@@ -15,9 +15,16 @@ import categoryRoute from './routes/categoryRoute.js'
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(
+// app.use(
+//     cors({
+//       origin: "http://localhost:5173", // ✅ Allow frontend URL
+//       credentials: true, // ✅ Allow cookies
+//     })
+//   );
+
+  app.use(
     cors({
-      origin: "http://localhost:5173", // ✅ Allow frontend URL
+      origin: "https://link-md9x55w9g-chdas-programmers-projects.vercel.app/", // ✅ Allow frontend URL
       credentials: true, // ✅ Allow cookies
     })
   );
