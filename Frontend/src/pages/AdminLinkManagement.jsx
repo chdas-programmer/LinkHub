@@ -18,6 +18,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
+import { BaseUrl } from "../../constant";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -68,7 +69,7 @@ export default function LinkManagementTable() {
 
   const fetchLinks = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/link/getLinks",{
+      const response = await axios.get(`${BaseUrl}/api/link/getLinks`,{
         withCredentials: true,
       });
       setLinks(response.data);
@@ -99,7 +100,7 @@ export default function LinkManagementTable() {
 
   const handleUpdateLink = async () => {
     try {
-      await axios.put(`http://localhost:3000/api/link/updateLink/${updateId}`, {
+      await axios.put(`${BaseUrl}/api/link/updateLink/${updateId}`, {
         name: updatedTitle,
         url: updatedUrl,
         category:updatedCategory,
@@ -119,7 +120,7 @@ export default function LinkManagementTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/link/deleteLink/${id}`,{
+      await axios.delete(`${BaseUrl}/api/link/deleteLink/${id}`,{
         withCredentials:true,
       });
       setLinks(links.filter((link) => link.id !== id));

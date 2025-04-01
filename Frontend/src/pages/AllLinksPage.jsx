@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { BaseUrl } from "../../constant";
 
 // const categories = [
 //   "Technology",
@@ -38,10 +39,10 @@ export default function CategoriesPage() {
     useEffect(() => {
       const fetchLinksAndCategories = async () => {
         try {
-          const response1 = await axios.get("http://localhost:3000/api/link/getApprovedLinks",{
+          const response1 = await axios.get(`${BaseUrl}/api/link/getApprovedLinks`,{
             withCredentials:true
           });
-          const response2 = await axios.get("http://localhost:3000/api/category/getCategories",{
+          const response2 = await axios.get(`${BaseUrl}api/category/getCategories`,{
             withCredentials:true
           });
   

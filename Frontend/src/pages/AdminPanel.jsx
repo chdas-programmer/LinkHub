@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Popover, TextField, Button, MenuItem, Select, FormControl, InputLabel } from "@mui/material";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { BaseUrl } from '../../constant';
 
 function AdminPanel() {
   const [anchorElCreate, setAnchorElCreate] = useState(null);
@@ -24,7 +25,7 @@ function AdminPanel() {
   const handleCreateLink = async () => {
     console.log("New Link Data:", { name, url, category });
     try {
-      const response=await axios.post("http://localhost:3000/api/link/createLink",{
+      const response=await axios.post(`${BaseUrl}/api/link/createLink`,{
         name:name,
         url:url,
         category:category
@@ -58,7 +59,7 @@ function AdminPanel() {
       
 
       try {
-        const response= await axios.get("http://localhost:3000/api/category/getCategories",{
+        const response= await axios.get(`${BaseUrl}/api/category/getCategories`,{
           withCredentials:true,
         })
         setCategories(response.data);

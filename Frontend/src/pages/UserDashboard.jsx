@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import { BaseUrl } from '../../constant';
 
 function UserDashboard() {
 
@@ -12,7 +13,7 @@ function UserDashboard() {
   const handleCreateLink = async () => {
     console.log("New Link Data:", { name, url, category });
     try {
-      const response=await axios.post("http://localhost:3000/api/link/createLink",{
+      const response=await axios.post(`${BaseUrl}/api/link/createLink`,{
         name:name,
         url:url,
         category:category
@@ -39,7 +40,7 @@ function UserDashboard() {
       
 
       try {
-        const response= await axios.get("http://localhost:3000/api/category/getCategories",{
+        const response= await axios.get(`${BaseUrl}/api/category/getCategories`,{
           withCredentials:true,
         })
         setCategories(response.data);

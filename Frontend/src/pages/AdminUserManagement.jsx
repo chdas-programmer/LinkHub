@@ -18,6 +18,7 @@ import MenuItem from "@mui/material/MenuItem";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BaseUrl } from "../../constant";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -96,7 +97,7 @@ export default function UserManagementTable() {
   const handleUpdateUser = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/api/user/updateUser/${updateId}`,
+        `${BaseUrl}api/user/updateUser/${updateId}`,
         {
           name: updatedName,
           email: updatedEmail,
@@ -136,7 +137,7 @@ export default function UserManagementTable() {
       }
     
     try {
-      await axios.delete(`http://localhost:3000/api/user/deleteUser/${id}`, {
+      await axios.delete(`${BaseUrl}/api/user/deleteUser/${id}`, {
         withCredentials: true,
       });
 

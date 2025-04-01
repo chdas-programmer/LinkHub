@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import {  UserIcon,Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
+import { BaseUrl } from '../../constant';
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -11,7 +12,7 @@ function Navbar() {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/user/profile", {
+        const response = await axios.get(`${BaseUrl}/api/user/profile`, {
           headers: { "Content-Type": "application/json" },
           withCredentials: true, // Ensures credentials (cookies) are sent
         });
@@ -34,7 +35,7 @@ function Navbar() {
     setIsLoggedIn(false);
     setUser(null);
     try {
-      const response =await axios.post("http://localhost:3000/api/user/logoutUser",{},{
+      const response =await axios.post(`${BaseUrl}/api/user/logoutUser`,{},{
         withCredentials:true
       })
       console.log("user logged out");
