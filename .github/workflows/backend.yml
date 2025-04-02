@@ -7,12 +7,12 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Backend
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
-      - name: Change to Backend Directory
-        run: cd Backend
 
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2

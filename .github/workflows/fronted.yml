@@ -7,12 +7,12 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Frontend
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
-      - name: Change to Frontend Directory
-        run: cd Frontend
 
       - name: Install Dependencies
         run: npm install
