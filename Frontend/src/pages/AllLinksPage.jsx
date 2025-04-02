@@ -42,7 +42,7 @@ export default function CategoriesPage() {
           const response1 = await axios.get(`${BaseUrl}/api/link/getApprovedLinks`,{
             withCredentials:true
           });
-          const response2 = await axios.get(`${BaseUrl}api/category/getCategories`,{
+          const response2 = await axios.get(`${BaseUrl}/api/category/getCategories`,{
             withCredentials:true
           });
   
